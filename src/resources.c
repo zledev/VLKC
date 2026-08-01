@@ -1,7 +1,9 @@
 #include "resources.h"
 
-void cleanUp(Window* win)
+void cleanUp(EngineContext* eng_ctx)
 {
-    glfwDestroyWindow(win->window);
+    vkDestroyInstance(eng_ctx->vulkan.instance, NULL);
+    
+    glfwDestroyWindow(eng_ctx->window.window);
     glfwTerminate();
 }

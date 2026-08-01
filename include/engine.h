@@ -1,12 +1,16 @@
 #ifndef ENGINE_H
 #define ENGINE_H
 
-#include "engine_headers.h"
+#pragma once
 
-typedef struct {
+#include "core.h"
+#include "eng_vulkan.h"
+
+typedef struct EngineContext {
     Window window;
+    Vulkan vulkan;
 } EngineContext;
 
-int run(Window* win);
+int start(EngineContext * eng_ctx);
 
 #endif

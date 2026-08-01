@@ -13,7 +13,7 @@ int initWindow(Window* win)
 
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
     glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
-    win->window = glfwCreateWindow(win->width, win->height, win->title, nullptr, nullptr);
+    win->window = glfwCreateWindow(win->width, win->height, win->title, NULL, NULL);
 
     return EXIT_SUCCESS;
 }

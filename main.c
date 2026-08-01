@@ -4,14 +4,19 @@
 #include "engine.h"
 
 int main() {
+    char * app_name = "Vulkan World";
+
     EngineContext eng_ctx = {
         .window = {
-            .window = nullptr,
+            .window = NULL,
             .width = 800,
             .height = 600,
-            .title = "Vulkan World"
+            .title = app_name
+        },
+        .vulkan = {
+            .app_name = app_name
         }
     };
     
-    return run(&eng_ctx.window);;
+    return start(&eng_ctx);;
 }
