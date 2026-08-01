@@ -10,4 +10,6 @@ int run(Window* win)
     // initVulkan
     mainLoop(win);
     cleanUp(win);
+
+    return EXIT_SUCCESS;
 }
