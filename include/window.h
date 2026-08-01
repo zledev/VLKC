@@ -1,0 +1,16 @@
+#ifndef WINDOW_H
+#define WINDOW_H
+
+#define GLFW_INCLUDE_VULKAN
+#include <GLFW/glfw3.h>
+
+typedef struct {
+    GLFWwindow * window;
+    const char * title;
+    uint32_t width;
+    uint32_t height;
+} Window;
+
+int initWindow(Window* win);
+
+#endif
