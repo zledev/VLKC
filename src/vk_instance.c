@@ -8,15 +8,13 @@
 
 void createInstance(Vulkan* vulkan)
 {
-    #ifdef DEBUG 
-        if (!checkValidationLayerSupport())
-        {
-            fprintf(stderr, "\n[ERROR] STATUS:FATAL |====> Validation Requested Not Available!");
-            exit(EXIT_FAILURE);
-        }
+    if (ENABLE_VALIDATION_LAYERS && !checkValidationLayerSupport())
+    {
+        fprintf(stderr, "\n[ERROR] STATUS:FATAL |====> Validation Requested Not Available!");
+        exit(EXIT_FAILURE);
+    }
 
-        printf("\n[LOG] STATUS:SUCCESS |====> Successfully Checked Validation!");
-    #endif
+    printf("\n[LOG] STATUS:SUCCESS |====> Successfully Checked Validation!");
 
     VkApplicationInfo appInfo = {
         .sType = VK_STRUCTURE_TYPE_APPLICATION_INFO,
@@ -41,6 +39,17 @@ void createInstance(Vulkan* vulkan)
         .ppEnabledExtensionNames = glfwExtensions,
         .enabledLayerCount = 0
     };
+
+    if (ENABLE_VALIDATION_LAYERS)
+    {
+        
+        createInfo.enabledLayerCount = (uint32_t)(sizeof(validationLayers)/sizeof(validationLayers[0]));
+        createInfo.ppEnabledLayerNames = validationLayers;
+    } 
+    else 
+    {
+        createInfo.enabledLayerCount = 0;
+    }
 
     VkResult result = vkCreateInstance(&createInfo, NULL, &vulkan->instance);
 

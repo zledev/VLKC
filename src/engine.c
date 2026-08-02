@@ -15,5 +15,5 @@ void start(EngineContext* eng_ctx)
     mainLoop(&eng_ctx->window);
     cleanUp(eng_ctx);
 
-    printf("\n[LOG] STATUS:ENDED |====> Engine Stopped!");
+    printf("\n[LOG] STATUS:END |====> Engine Stopped!");
 }

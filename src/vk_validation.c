@@ -5,10 +5,6 @@
 #include <stdio.h>
 #include <string.h>
 
-const char* validationLayers[] = {
-    "VK_LAYER_KHRONOS_validation",
-};
-
 bool checkValidationLayerSupport()
 {
     uint32_t layerCount;
@@ -25,7 +21,7 @@ bool checkValidationLayerSupport()
 
     vkEnumerateInstanceLayerProperties(&layerCount, availableLayers);
 
-    printf("\n\n[LOG] STATUS:START |====> CHECKING VALIDATION LAYERS...\n");
+    printf("\n[LOG] STATUS:START |====> CHECKING VALIDATION LAYERS...\n");
 
     for (uint32_t i = 0; 
         i < (sizeof(validationLayers)/sizeof(validationLayers[0])); 
@@ -46,11 +42,12 @@ bool checkValidationLayerSupport()
         }
 
         if (!layerFound) {
+            free(availableLayers);
             return false;
         }
     }
 
-    printf("\n\n[LOG] STATUS:END |====> VALIDATION LAYERS CHECK FINISHED!\n");
+    printf("\n[LOG] STATUS:END |====> VALIDATION LAYERS CHECK FINISHED!\n");
 
     free(availableLayers);
     return true;
