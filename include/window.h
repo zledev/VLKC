@@ -1,6 +1,3 @@
-#ifndef WINDOW_H
-#define WINDOW_H
-
 #pragma once
 
 #define GLFW_INCLUDE_VULKAN
@@ -14,5 +11,3 @@ typedef struct {
 } Window;
 
 void initWindow(Window* win);
-
-#endif

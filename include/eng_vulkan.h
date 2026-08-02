@@ -1,6 +1,3 @@
-#ifndef ENG_VULKAN_H
-#define ENG_VULKAN_H
-
 #pragma once
 
 #define GLFW_INCLUDE_VULKAN
@@ -13,5 +10,3 @@ typedef struct {
 } Vulkan;
 
 void initVulkan(Vulkan* vulkan);
-
-#endif

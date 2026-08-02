@@ -10,6 +10,3 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 
 echo "[LOG] STATUS <==> Building..."
 cmake --build build
-
-echo "[LOG] STATUS <==> Running Engine..."
-./build/vulkan_engine
