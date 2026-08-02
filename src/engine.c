@@ -7,12 +7,12 @@
 
 void start(EngineContext* eng_ctx)
 {
-    printf("\n[LOG] STATUS:START ==> Engine Started!");
+    printf("\n[LOG] STATUS:START |====> Engine Started!");
 
     initWindow(&eng_ctx->window);
     initVulkan(&eng_ctx->vulkan);
     mainLoop(&eng_ctx->window);
     cleanUp(eng_ctx);
 
-    printf("\n[LOG] STATUS:ENDED ==> Engine Stopped!");
+    printf("\n[LOG] STATUS:ENDED |====> Engine Stopped!");
 }

@@ -9,5 +9,5 @@ void cleanUp(EngineContext* eng_ctx)
     glfwDestroyWindow(eng_ctx->window.window);
     glfwTerminate();
 
-    printf("\n[LOG] STATUS:SUCCESS ==> Successfully Cleaned Up Resources!");
+    printf("\n[LOG] STATUS:SUCCESS |====> Successfully Cleaned Up Resources!");
 }

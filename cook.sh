@@ -11,5 +11,5 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 echo "[LOG] STATUS <==> Building..."
 cmake --build build
 
-./build/vulkan_engine
 echo "[LOG] STATUS <==> Running Engine..."
+./build/vulkan_engine

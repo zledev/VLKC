@@ -4,12 +4,13 @@
 
 void mainLoop(Window* win)
 {
-    printf("\n[LOG] STATUS:SUCCESS ==> Program Loop Started!");
+    printf("\n[LOG] STATUS:SUCCESS |====> Program Loop Started!");
 
     while(!glfwWindowShouldClose(win->window))
     {
         glfwPollEvents();
+        break;
     }
 
-    printf("\n[LOG] STATUS:SUCCESS ==> Program Loop Ended!");
+    printf("\n[LOG] STATUS:SUCCESS |====> Program Loop Ended!");
 }
