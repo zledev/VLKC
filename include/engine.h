@@ -11,6 +11,6 @@ typedef struct EngineContext {
     Vulkan vulkan;
 } EngineContext;
 
-int start(EngineContext * eng_ctx);
+void start(EngineContext * eng_ctx);
 
 #endif

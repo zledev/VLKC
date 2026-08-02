@@ -33,7 +33,7 @@ void createInstance(Vulkan* vulkan)
 
     if (result != VK_SUCCESS)
     {
-        fprintf(stderr, "[ERROR] STATUS:FATAL ==> Failed to create Instance!");
+        fprintf(stderr, "\n[ERROR] STATUS:FATAL ==> Failed to create Instance!");
         exit(EXIT_FAILURE);
     }
 }
@@ -45,18 +45,21 @@ void checkExtensionSupport()
     VkExtensionProperties* extensions = malloc(extensionCount * (sizeof(VkExtensionProperties)));
     vkEnumerateInstanceExtensionProperties(NULL, &extensionCount, extensions);
 
-    printf("<== [LOG] STATUS:CHECK ==>\n");
+    printf("\n\n<=====> [LOG] STATUS:CHECK <=====>\n");
 
     for (uint32_t i = 0; i < extensionCount; i++) {
-        printf("[EXTENSION]> %s\n", extensions[i].extensionName);
+        printf("\n[EXTENSION]> %s", extensions[i].extensionName);
     }
 
-    printf("<== [LOG] STATUS:CHECK ==>");
+    printf("\n\n<=====> [LOG] STATUS:CHECK <=====>\n");
+
+    free(extensions);
 }
 
 void initVulkan(Vulkan* vulkan)
 {
     checkExtensionSupport();
     createInstance(vulkan);
+    
+    printf("\n[LOG] STATUS:SUCCESS ==> Succesfully Initialized Vulkan!");
 }
-

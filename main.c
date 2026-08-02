@@ -18,5 +18,7 @@ int main() {
         }
     };
     
-    return start(&eng_ctx);;
+    start(&eng_ctx);
+    
+    return EXIT_SUCCESS;
 }

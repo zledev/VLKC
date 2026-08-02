@@ -13,6 +13,6 @@ typedef struct {
     uint32_t height;
 } Window;
 
-int initWindow(Window* win);
+void initWindow(Window* win);
 
 #endif
